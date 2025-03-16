@@ -1,0 +1,208 @@
+/* Import Old Standard TT font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #777;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    max-width: 600px;
+    margin-left: 40px;
+    margin-right: calc(50% + 40px);
+    text-align: left;
+}
+
+/* Fixed Image Container */
+.fixed-image-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f5f5f5;
+}
+
+.fixed-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(245, 245, 245, 0.2), rgba(245, 245, 245, 0.2)),
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.section-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.section-image.active {
+    opacity: 1;
+}
+
+/* Mobile Section Image */
+.mobile-section-image {
+    display: none;
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 40px;
+}
+
+section:first-child {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #000;
+    margin: 0 0 20px 0;
+    text-align: left;
+    line-height: 1.4;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.03em;
+}
+
+.section-intro {
+    font-size: 24px;
+    color: #000;
+    margin: 0 0 30px 0;
+    text-align: left;
+    font-weight: 400;
+    padding: 0 0 0 15px;
+    line-height: 1.4;
+    border-left: 3px solid #eee;
+    font-family: 'Inter', sans-serif;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #000;
+    margin: 25px 0 0 0;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+    display: block;
+}
+
+.subtitle-text {
+    display: block;
+    margin: 5px 0 15px 0;
+}
+
+p {
+    margin: 15px 0;
+    color: #777;
+    font-size: 18px;
+    text-align: left;
+    font-family: 'Inter', sans-serif;
+}
+
+ul, ol {
+    margin: 15px 0;
+    padding-left: 25px;
+    text-align: left;
+    color: #777;
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #777;
+    font-family: 'Inter', sans-serif;
+}
+
+strong {
+    color: #777;
+    font-weight: 400;
+}
+
+hr {
+    border: none;
+    border-top: 1px dotted #ddd;
+    height: 1px;
+    background-color: transparent;
+    margin: 30px 0;
+    border-spacing: 10px;
+    letter-spacing: 10px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .content {
+        margin: 0 auto;
+        max-width: 90%;
+        padding: 20px 5%;
+    }
+
+    .fixed-image-container {
+        display: none;
+    }
+
+    .mobile-section-image {
+        display: block;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-intro {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 20px 20px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-intro {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content {
+        padding: 15px;
+    }
+
+    body, p, .subtitle-text, li {
+        font-size: 16px;
+    }
+} 
