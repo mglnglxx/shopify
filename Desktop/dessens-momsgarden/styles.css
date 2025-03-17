@@ -13,6 +13,19 @@ body, html {
     line-height: 1.4;
 }
 
+/* Logo Overlay */
+.logo-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: auto;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+}
+
 /* Content */
 .content {
     padding: 20px;
